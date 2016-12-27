@@ -1,0 +1,40 @@
+---
+parser: babel-eslint
+extends: airbnb
+
+env:
+  browser: true
+  node: true
+  amd: true
+  commonjs: true
+
+rules:
+  allow-parens:
+    - off
+  comma-dangle: off
+  import/no-unresolved:
+    - error
+  import/no-extraneous-dependencies: on
+  no-use-before-define: off
+  promise/param-names: 2
+  promise/always-return: 2
+  promise/catch-or-return: 2,
+  promise/no-native: 0
+  react/jsx-no-bind: off
+  react/jsx-filename-extension:
+    - error
+    - extensions:
+        - .js
+        - .jsx
+
+plugins:
+  - import
+  - promise
+  - react
+
+settings:
+  import/resolver:
+    webpack:
+      # NOTE: Might have to change to be absolute
+      config: ./webpack/eslint.js
+...
